@@ -1158,7 +1158,75 @@ body {
   border: 2px solid black;
 }
 
+@media (max-width: 768px) {
+  .container-about {
+       display: flex;
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center-align content */
+      text-align: center;
+  }
+  .about-box{
+    height: 300px;
+    width: 300px;
+    margin-top: 40px;
+    margin-left: 0px;
+  }
+  .about_title span, .about_description, .about_text_box,.personal_info p, .read{
+    margin-left: 0 !important;
+  }
 
+  .left, .about_text_box {
+      flex: 1;
+      height: 350px;
+      width: 100%; /* Full width for both sections */
+      text-align: center; /* Center-align content on mobile */
+  }
+
+  .about-box img {
+      width: 150px; /* Reduce image size */
+      height: 150px;
+  }
+
+  .about_title span {
+      font-size: 20px; /* Reduce title size */
+  }
+
+  .about_description {
+      font-size: 14px; /* Adjust description font size */
+
+  }
+}
+@media screen and (max-width: 600px) {
+  .personal_info {
+    grid-template-columns: 1fr; /* Switch to a single-column layout */
+  }
+
+  .personal_info p {
+    flex-direction: column; /* Stack label and value vertically */
+    text-align: left; /* Align everything to the left */
+  }
+
+  .personal_info p strong {
+    padding-right: 0; /* Remove padding since stacking removes the need */
+    width: auto; /* Allow labels to size dynamically */
+    margin-bottom: 5px; /* Adds spacing between label and value */
+  }
+}
+@media (max-width: 480px) {
+  .about-box img {
+      width: 120px; /* Further reduce image size */
+      height: 120px;
+  }
+
+  .about_title span {
+      font-size: 18px; /* Smaller title font */
+  }
+
+  .about_description {
+      font-size: 12px;
+      line-height: 1.4;
+  }
+}
 .project-slider-container {
   overflow: hidden;
   width: 100%;
