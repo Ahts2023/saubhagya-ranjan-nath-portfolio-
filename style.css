@@ -1,0 +1,444 @@
+
+
+/* Background Video */
+.gif-background {
+    position: fixed; /* Use fixed to keep it in place during scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Ensure the GIF is behind other content */
+}
+
+.gif-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area */
+    position: absolute; /* Positioning to cover the area */
+    top: 50%; /* Center the GIF */
+    left: 50%; /* Center the GIF */
+    transform: translate(-50%, -50%); /* Center the GIF */
+}
+
+/* Other CSS styles for the header and content */
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    color: white; /* Text color on top of video */
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between brand/logo and nav links */
+    align-items: center;
+    padding: 10px 20px;
+    color: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Change background color when scrolled */
+}
+
+/* Navbar hidden when scrolling down */
+.navbar-hidden {
+    top: -100px; /* Hide the navbar when scrolling down */
+}
+
+
+.navbar-left {
+    flex: 1; /* Keeps the brand/logo on the left */
+}
+
+.brand-logo {
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.navbar-links {
+    display: flex; /* Ensures nav links are in a row */
+    gap: 20px; /* Space between links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /* Align links to the right */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 19px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+ color: #8d7e7e;
+}
+
+.nav-link.active {
+    padding: 3px 8px 6px 8px;
+    color: #fff;
+    background-color:rgba(31, 31, 31, 1);
+}
+.nav-link.active:hover {
+  color: rgba(255, 255, 255, 1); 
+  background-color:#333
+}
+
+/* Search button container styling */
+.navbar-search-container {
+    margin-left: 20px;
+}
+
+/* Mobile menu toggle styling */
+.navbar-toggle {
+    display: none; /* Hide toggle for larger screens */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+.search-toggle-btn{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+/* Media Query for mobile screens */
+/* Media Queries for Mobile */
+
+/* To show the search input when clicked */
+
+.search-input{
+    display: none;
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .navbar-links li {
+        margin: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    /* Show navbar links when toggle is active */
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+/* Text Section */
+.image-text-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 20px;
+    z-index: 2; /* Ensure this section is above the video */
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    gap: 30px;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column; /* Stack image and teacher info */
+    align-items: center;
+    flex: 1; /* Adjust width as needed */
+    text-align: center;
+}
+
+.section-image {
+    max-width: 95%;
+    height: 450px;
+   
+}
+
+.text-container {
+    flex: 2;
+    max-width: 850px;
+}
+
+.text-container h2 {
+    font-size: 20px;
+    margin-top: 50px;
+    color: white;
+    font-weight: 100;  
+}
+
+.text-container p {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.text-container .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.text-container .btn:hover {
+    background-color: #0056b3;
+}
+
+.teacher-info {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    margin-top: 15px;
+    font-size: 16px;
+    color: #333; /* Dark text */
+    text-align: center; /* Ensure text is centered */
+}
+
+.teacher-post, .teacher-department {
+    font-size: 20px;
+    color: #fff;
+    margin: 5px 0;
+    font-weight: 500;
+}
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .image-text-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    header{
+        height: auto;
+    }
+    .section-image{
+        width: 100%;
+        height: 300px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-container {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .text-container {
+        width: 80%;
+        text-align: center;
+    }
+
+    .text-container h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .text-container p {
+        font-size: 16px;
+    }
+}
+
+/* Container for the line with a white background */
+.section-profile {
+    background-color: white; /* Set the section's background to white */
+    padding: 10px 0; /* Add padding to give space inside the section */
+}
+
+/* Container for the line with a white background */
+.line-container {
+    background-color: white; /* Set the background color to white */
+    padding: 0px ; /* Add some padding to give space around the green line */
+}
+
+/* Green Line Styling */
+.green-line {
+    width: 90%; /* Reduce the width of the line to 60% of the container width */
+    height: 2.5px; /* Set the height of the line */
+    background-color: green; /* Set the color of the line */
+    margin: 0 auto; /* Center-align the green line */
+    border: none; /* Ensure no borders are applied */
+}
+
+/* Styling for Profile Heading */
+.profile-heading {
+    background-color: rgba(0, 137, 72, 1); /* Set the background to green */
+    text-align: center; /* Center-align the text */
+    padding: 30px; /* Add some padding around the text */
+    margin-top: 10px; /* Add space above the profile heading */
+}
+
+.profile-heading h2 {
+    color: black; /* Set the text color to white */
+    font-size: 29pt; /* Adjust font size for the heading */
+    margin: 0; /* Remove default margins */
+}
+
+
+/* Container Styling */
+.details-container {
+    padding: 20px;
+    margin: 20px auto;
+    width:100%;
+    height: auto;
+}
+
+/* Section Heading Styling */
+.details-heading {
+    color: #0000FF; /* Blue color for the heading */
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* List Styling */
+.details-section ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 0; /* Remove left padding */
+}
+
+.details-section ul li {
+    font-size: 1.2rem;
+    margin-bottom: 8px; /* Space between list items */
+    color: #333; /* Dark text color */
+    position: relative; /* For positioning the custom marker */
+    padding-left: 20px; /* Add space for custom marker */
+}
+
+/* Custom Marker */
+
+
+
+.simple-green-line {
+    width: 90%; /* Line spans 90% of the container's width */
+    height: 3.5px; /* Thickness of the line */
+    background-color: green; /* Green color */
+    margin: 20px auto; /* Centers the line horizontally and adds spacing above and below */
+}
+
+
+
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Align buttons in the center horizontally */
+    gap: 125px; /* Space between buttons */
+    margin-top: 35px; /* Space between the line and buttons */
+    margin-bottom: 35px;
+}
+
+/* Style for the buttons */
+.custom-button {
+    padding: 10px 50px 10px 50px; /* Button size */
+    background-color:rgba(0, 137, 72, 1) ; /* Blue button color */
+    color: rgba(0, 0, 0, 1); /* Button text color */
+    border-color: rgba(0, 0, 0, 1);;
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.button-link {
+    text-decoration: none;  /* Remove the underline */
+    color: black;           /* Change text color to black */
+}
+
+@media (max-width: 768px) {
+    /* Stack buttons vertically on smaller screens */
+    .button-container {
+        gap: 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .custom-button {
+        width: 80%; /* Make buttons full-width on small screens */
+        margin-bottom: 10px; /* Add spacing between buttons */
+        font-size: 14px; /* Adjust button font size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    .custom-button {
+        font-size: 12px; /* Smaller font size */
+        padding: 8px 16px; /* Smaller padding */
+    }
+}
+
+
+/* Footer */
+/* Footer styling */
+
+.footer-container {
+    background-image: url(image/yes\ no.gif);
+    background-position: center;
+    background-size: cover;
+    background-color: #333;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    height: 110px; /* Make sure it takes up the full height of the footer */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack the text vertically */
+    align-items: center; /* Align the text in the center */
+    gap: 0; /* Remove any gap between the text items */
+}
+
+footer p {
+    color: #fff;
+    margin: 0; /* Remove default margin between p tags */
+    font-size: 18px; /* Adjust font size as needed */
+}
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack the text vertically on smaller screens */
+        font-size: 20px; /* Adjust font size for readability on mobile */
+    }
+
+    .footer-content p {
+        margin: 5px 0; /* Add space between paragraphs */
+    }
+}

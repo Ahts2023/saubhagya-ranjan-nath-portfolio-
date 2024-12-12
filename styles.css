@@ -1,0 +1,300 @@
+.body{
+    padding: 0;
+    margin: 0;
+}
+
+/* Other CSS styles for the header and content */
+header {
+    position: relative;
+    width: 100%;
+    height: 60vh; /* Full viewport height */
+    color: white; /* Text color on top of video */
+    background-image: url(image/workimg.png);
+    background-position: center;
+    background-size: cover;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between brand/logo and nav links */
+    align-items: center;
+    padding: 10px 20px;
+    color: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+}
+.navbar.scrolled {
+    background-color: rgba(0, 0, 0, 0.8); /* Change background color when scrolled */
+}
+
+/* Navbar hidden when scrolling down */
+.navbar-hidden {
+    top: -100px; /* Hide the navbar when scrolling down */
+}
+
+
+.navbar-left {
+    flex: 1; /* Keeps the brand/logo on the left */
+}
+
+.brand-logo {
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.navbar-links {
+    display: flex; /* Ensures nav links are in a row */
+    gap: 20px; /* Space between links */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end; /* Align links to the right */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 19px;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+ color: #8d7e7e;
+}
+
+.nav-link.active {
+    padding: 3px 8px 6px 8px;
+    color: #fff;
+    background-color:rgba(31, 31, 31, 1);
+}
+.nav-link.active:hover {
+  color: rgba(255, 255, 255, 1); 
+  background-color:#333
+}
+
+/* Search button container styling */
+.navbar-search-container {
+    margin-left: 20px;
+}
+
+/* Mobile menu toggle styling */
+.navbar-toggle {
+    display: none; /* Hide toggle for larger screens */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+.search-toggle-btn{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+/* Media Query for mobile screens */
+/* Media Queries for Mobile */
+
+/* To show the search input when clicked */
+
+.search-input{
+    display: none;
+}
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .navbar-links li {
+        margin: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    /* Show navbar links when toggle is active */
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+.simple-green-line {
+    width: 90%; /* Line spans 90% of the container's width */
+    height: 3px; /* Thickness of the line */
+    background-color: green; /* Green color */
+    margin: 5px auto; /* Centers the line horizontally and adds spacing above and below */
+}
+
+.simple-green-line-2 {
+    width: 100%; /* Line spans 90% of the container's width */
+    height: 3px; /* Thickness of the line */
+    background-color: green; /* Green color */
+    margin: 35px auto; /* Centers the line horizontally and adds spacing above and below */
+}
+
+
+
+.professor-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+    text-align: left;
+}
+
+.heading-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.professor-section h2 {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 0;
+    flex-grow: 1; /* Pushes the button to the right */
+    font-weight: 500;
+}
+
+.professor-section .toggle-btn {
+    background: transparent;
+    border: none;
+    color: green;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.professor-section .toggle-btn:hover {
+    color: #0056b3;
+}
+
+.professor-section .arrow-icon {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.professor-section p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+.professor-section .highlight {
+    font-weight: bold;
+    color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
+
+.heading-container {
+    margin-top: 100px;
+    margin-left: 90px;
+    text-align: left; /* Align heading to the left */
+    padding: 20px; /* Add some spacing */
+}
+
+.main-heading {
+    font-size: 24px; /* Adjust heading font size */
+    font-weight: bold; /* Make the heading bold */
+    margin: 0; /* Remove default margins */
+    color: #fff; /* Heading color */
+}
+
+.heading-underline {
+    width: 250px; /* Length of the underline */
+    height: 12px; /* Thickness of the underline */
+    background-color: green; /* Underline color */
+    margin: 15px 0; /* Spacing between the heading and the underline */
+    border: none; /* Remove any border */
+}
+@media (max-width: 768px) {
+    .heading-container {
+        margin-top: 0;
+        margin-left: 0;
+    }
+    .main-heading {
+        font-size: 28px; /* Reduce font size */
+    }
+
+    .heading-underline {
+        width: 60%; /* Make the underline wider */
+    }
+}
+
+/* Media Query for Mobile Screens (up to 480px) */
+@media (max-width: 480px) {
+    .main-heading {
+        font-size: 24px; /* Further reduce font size */
+    }
+
+    .heading-underline {
+        width: 70%; /* Make the underline wider */
+    }
+}
+
+.footer-container {
+    background-image: url(image/yes\ no.gif);
+    background-position: center;
+    background-size: cover;
+    background-color: #333;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    height: 110px; /* Make sure it takes up the full height of the footer */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Stack the text vertically */
+    align-items: center; /* Align the text in the center */
+    gap: 0; /* Remove any gap between the text items */
+}
+
+footer p {
+    color: #fff;
+    margin: 0; /* Remove default margin between p tags */
+    font-size: 18px; /* Adjust font size as needed */
+}
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Stack the text vertically on smaller screens */
+        font-size: 20px; /* Adjust font size for readability on mobile */
+    }
+
+    .footer-content p {
+        margin: 5px 0; /* Add space between paragraphs */
+    }
+}
